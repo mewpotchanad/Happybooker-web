@@ -6,6 +6,8 @@ import EbookPage from '../pages/EbookPage';
 import ProfilePage from '../pages/ProfilePage';
 import AccountPage from '../pages/AccountPage';
 import SubscriptionPage from '../pages/SubscriptionPage';
+import RegisterPage from '../pages/RegisterPage';
+
 
 const router = createBrowserRouter([
     {
@@ -29,7 +31,11 @@ const router = createBrowserRouter([
 }, {
     path: '/subscription',
     element: <SubscriptionPage />
+}, {
+    path: '/register',
+    element: <RegisterPage />
 }
+
 
 ])
 
