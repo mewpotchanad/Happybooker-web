@@ -65,6 +65,8 @@ export default function EbookPage() {
           </div>
 
           {/* --------- box ------------ */}
+          {/* ---------- title ------------- */}
+          <h1 className='text-xl pl-6 mt-5'>น้องชายจอมห้าวปะทะพี่สาวโอตาคุ เล่ม 4 (ฉบับการ์ตูน)</h1>
           <div className='flex justify-start mt-10'>
             <div className='w-[250px] h-[340px] bg-white rounded-md grid justify-items-center ml-10'>
               <img src="4.jpg" className="w-62 shadow-md m-auto" alt="happy booker Logo" />
