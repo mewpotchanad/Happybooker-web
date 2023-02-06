@@ -7,6 +7,9 @@ import ProfilePage from '../pages/ProfilePage';
 import AccountPage from '../pages/AccountPage';
 import SubscriptionPage from '../pages/SubscriptionPage';
 import RegisterPage from '../pages/RegisterPage';
+import NovelPage from '../pages/NovelPage';
+import CartoonPage from '../pages/CartoonPage';
+import SelfhelpPage from '../pages/SelfhelpPage';
 
 
 const router = createBrowserRouter([
@@ -34,6 +37,15 @@ const router = createBrowserRouter([
 }, {
     path: '/register',
     element: <RegisterPage />
+}, {
+    path: '/novel',
+    element: <NovelPage />
+}, {
+    path: '/cartoon',
+    element: <CartoonPage />
+}, {
+    path: '/selfhelp',
+    element: <SelfhelpPage />
 }
 
 

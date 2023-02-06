@@ -5,7 +5,7 @@ export default function LoginPage() {
   return (
     <section>
       <div className="w-[100vw] h-screen flex justify-center items-center justify-around">
-        <Link to="#">
+        <Link to="/">
           <img className="mt-[20px]" src="HAPPY BOOKER_LOGIN.png" alt="logo" />
         </Link>
 
@@ -28,7 +28,7 @@ export default function LoginPage() {
                   <button type="submit" className="w-1/3 text-white bg-[#FEC601] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">เข้าสู่ระบบ</button>
                 </div>
                 <p className="text-sm font-light text-center">
-                  <a href="#" className="font-medium text-primary-600 hover:underline dark:text-primary-500">สมัครสมาชิก</a>
+                  <Link to="/register" className="font-medium text-primary-600 hover:underline dark:text-primary-500">สมัครสมาชิก</Link>
                 </p>
               </form>
             </div>
