@@ -5,7 +5,7 @@ export default function HomePage() {
   return (
     <>
       {/* ------------- content -------------------------- */}
-      <div className='w-full ml-[230px] mt-[-120px]'>
+      <div className='w-[1200px] ml-[300px] mt-[-120px]'>
         <div>
           <h1 className='p-6 text-[#FFFFFF] text-2xl'>หน้าแรก</h1>
         </div>

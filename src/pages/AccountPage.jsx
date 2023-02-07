@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function AccountPage() {
   return (
     <>
-      <nav className="px-10 py-2.5">
+      <nav className="px-10 py-5">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
 
           <Link to="/">

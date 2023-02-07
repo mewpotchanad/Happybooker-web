@@ -17,38 +17,38 @@ const router = createBrowserRouter([
     {
         path: '/login',
         element: <LoginPage />
-    },{
+    }, {
         path: '/register',
         element: <RegisterPage />
-    } ,{
+    }, {
+        path: '/profile',
+        element: <ProfilePage />
+    }, {
+        path: '/account',
+        element: <AccountPage />
+    }, {
         path: '/',
         element: <Navbar />,
-        children: [ {path: '/', element: <HomePage />},
-            {
-                path: '/shelf',
-                element: <ShelfPage />
-            }, {
-                path: '/ebook',
-                element: <EbookPage />
-            }, {
-                path: '/profile',
-                element: <ProfilePage />
-            }, {
-                path: '/account',
-                element: <AccountPage />
-            }, {
-                path: '/subscription',
-                element: <SubscriptionPage />
-            }, {
-                path: '/novel',
-                element: <NovelPage />
-            }, {
-                path: '/cartoon',
-                element: <CartoonPage />
-            }, {
-                path: '/selfhelp',
-                element: <SelfhelpPage />
-            }
+        children: [{ path: '/', element: <HomePage /> },
+        {
+            path: '/shelf',
+            element: <ShelfPage />
+        }, {
+            path: '/ebook',
+            element: <EbookPage />
+        }, {
+            path: '/subscription',
+            element: <SubscriptionPage />
+        }, {
+            path: '/novel',
+            element: <NovelPage />
+        }, {
+            path: '/cartoon',
+            element: <CartoonPage />
+        }, {
+            path: '/selfhelp',
+            element: <SelfhelpPage />
+        }
         ]
     }
 
