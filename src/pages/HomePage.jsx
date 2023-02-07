@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 export default function HomePage() {
   return (
     <>
-      <nav className="px-10 py-2.5">
+      <nav className="px-10 py-5">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
 
           <Link to="#">
@@ -56,17 +56,17 @@ export default function HomePage() {
               </div>
               <div>
                 <li>
-                  <button id="doubleDropdownButton" data-dropdown-toggle="doubleDropdown" data-dropdown-placement="right-start" type="button" className="flex items-center justify-center w-full px-4 py-2 text-[#808191] hover:text-[#FEC601]">หมวดหมู่<svg aria-hidden="true" className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"></path></svg></button>
+                  <button id="doubleDropdownButton" data-dropdown-toggle="doubleDropdown" data-dropdown-placement="right-start" type="button" className="flex items-center justify-center w-full px-4 py-2 text-[#808191] hover:text-[#FEC601]">หมวดหมู่<svg className="w-4 h-4" fill="currentColor"  xmlns="http://www.w3.org/2000/svg"><path  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" ></path></svg></button>
                   <div id="doubleDropdown" className="z-100 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
                     <ul className="py-2 text-sm">
                       <li>
-                        <Link to="#" className="block px-4 py-2 text-[#808191] hover:text-[#FEC601]">นิยาย</Link>
+                        <Link to="/novel" className="block px-4 py-2 text-[#808191] hover:text-[#FEC601]">นิยาย</Link>
                       </li>
                       <li>
-                        <Link to="#" className="block px-4 py-2 text-[#808191] hover:text-[#FEC601]">การ์ตูน</Link>
+                        <Link to="/cartoon" className="block px-4 py-2 text-[#808191] hover:text-[#FEC601]">การ์ตูน</Link>
                       </li>
                       <li>
-                        <Link to="#" className="block px-4 py-2 text-[#808191] hover:text-[#FEC601]">พัฒนาตนเอง</Link>
+                        <Link to="/selfhelp" className="block px-4 py-2 text-[#808191] hover:text-[#FEC601]">พัฒนาตนเอง</Link>
                       </li>
                     </ul>
                   </div>
@@ -75,7 +75,7 @@ export default function HomePage() {
             </ul>
           </div>
         </div>
-
+        {/* ------------- end menu -------------------------- */}
 
         {/* ------------- content -------------------------- */}
         <div className='w-full'>

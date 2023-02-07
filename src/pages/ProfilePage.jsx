@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function ProfilePage() {
   return (
     <>
-      <nav className="px-10 py-2.5">
+      <nav className="px-10 py-5">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
 
           <Link to="/">
@@ -32,6 +32,7 @@ export default function ProfilePage() {
             <ul>
               <div>
                 <li>
+                  
                   <Link to="/" className='text-[#808191] hover:text-[#FEC601]'>หน้าแรก</Link>
                 </li>
               </div>
