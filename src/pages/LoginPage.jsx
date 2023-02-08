@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import LoginForm from "../features/auth/LoginForm";
+import RegisterContainer from "../features/auth/RegisterContainer";
 
 
 export default function LoginPage() {
@@ -15,9 +16,8 @@ export default function LoginPage() {
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <LoginForm />
             </div>
-            <p className="text-sm font-light text-center mb-5">
-              <Link to="/register" className="font-medium text-primary-600 hover:underline dark:text-primary-500">สมัครสมาชิก</Link>
-            </p>
+            <RegisterContainer />
+            
           </div>
         </div>
       </div>
