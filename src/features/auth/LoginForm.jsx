@@ -18,7 +18,6 @@ export default function LoginForm() {
                 <div className="grid justify-items-center">
                     <button type="submit" className="w-1/3 text-white bg-[#FEC601] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">เข้าสู่ระบบ</button>
                 </div>
-                
             </form>
         </>
     )

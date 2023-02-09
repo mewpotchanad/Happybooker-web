@@ -17,7 +17,6 @@ export default function LoginPage() {
               <LoginForm />
             </div>
             <RegisterContainer />
-            
           </div>
         </div>
       </div>
