@@ -1,9 +1,9 @@
 import React from 'react';
+import { toast } from 'react-toastify'
 import { useState } from 'react';
-// import { object, string, ref } from 'yup'
-import * as Joi from 'joi'
 import Input from '../../components/Input';
 import validateRegister from "../../validators/validate-register"
+import * as authApi from '../../apis/auth-api'
 
 
 const initialInput = {
@@ -24,13 +24,20 @@ export default function RegisterForm() {
         setInput({ ...input, [e.target.name]: e.target.value })
     }
 
-    const handleSubmitForm = e => {
-        e.preventDefault()
-        const result = validateRegister(input)
-        if (result) {
-            setError(result)
-        } else {
-            setError({})
+    const handleSubmitForm = async e => {
+        try {
+            e.preventDefault()
+            const result = validateRegister(input)
+            if (result) {
+                setError(result)
+            } else {
+                setError({})
+                await authApi.register(input);
+                setInput(initialInput);
+                toast.success('success register. please log in to continue.');
+            }
+        } catch (err) {
+            toast.error('error')
         }
     }
 
@@ -103,7 +110,12 @@ export default function RegisterForm() {
                 </div>
 
                 <div className="grid justify-items-center">
-                    <button type="submit" className="w-1/3 text-white bg-[#FEC601] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">สมัครสมาชิก</button>
+                    <button
+                        type="submit"
+                        className="w-1/3 text-white bg-[#FEC601] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                    >
+                        สมัครสมาชิก
+                    </button>
                 </div>
             </form>
         </>

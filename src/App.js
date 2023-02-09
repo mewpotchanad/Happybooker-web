@@ -1,10 +1,12 @@
+import { ToastContainer } from 'react-toastify'
 import Router from "../src/routes/Router"
-import Login from "./pages/Login";
 
 function App() {
   return (
-    <Router />
-    // <Login/>
+    <>
+      <Router />
+      <ToastContainer autoClose="1000" theme="light" position="bottom-center" />
+    </>
   );
 }
 
