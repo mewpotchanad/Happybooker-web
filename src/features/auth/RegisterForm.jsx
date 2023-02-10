@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Input from '../../components/Input';
 import validateRegister from "../../validators/validate-register"
 import * as authApi from '../../apis/auth-api'
+import { useNavigate } from "react-router-dom";
 
 
 const initialInput = {
@@ -19,6 +20,7 @@ const initialInput = {
 export default function RegisterForm() {
     const [input, setInput] = useState(initialInput)
     const [error, setError] = useState({})
+    const navigate = useNavigate()
 
     const handleChangeInput = e => {
         setInput({ ...input, [e.target.name]: e.target.value })
@@ -35,6 +37,8 @@ export default function RegisterForm() {
                 await authApi.register(input);
                 setInput(initialInput);
                 toast.success('success register. please log in to continue.');
+                navigate('/login')
+                
             }
         } catch (err) {
             toast.error('error')

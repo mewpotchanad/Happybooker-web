@@ -11,44 +11,69 @@ import NovelPage from '../pages/NovelPage';
 import CartoonPage from '../pages/CartoonPage';
 import SelfhelpPage from '../pages/SelfhelpPage';
 import Navbar from '../layouts/Navbar';
+import RedirectiIfAuthenticate from '../features/auth/RedirectiIfAuthenticate';
+import ProtectedRoute from '../features/auth/ProtectedRoute';
 
 
 const router = createBrowserRouter([
     {
         path: '/login',
-        element: <LoginPage />
+        element: (
+            <RedirectiIfAuthenticate>
+                <LoginPage />
+            </RedirectiIfAuthenticate>
+        )
     }, {
         path: '/register',
-        element: <RegisterPage />
+        element: (
+            <ProtectedRoute>
+                <RegisterPage />
+            </ProtectedRoute>
+        )
     }, {
         path: '/profile',
-        element: <ProfilePage />
+        element: (
+            <ProtectedRoute>
+                <ProfilePage />
+            </ProtectedRoute>
+        )
     }, {
         path: '/account',
-        element: <AccountPage />
+        element: (
+            <ProtectedRoute>
+                <AccountPage />
+            </ProtectedRoute>
+        )
     }, {
-        path: '/',
-        element: <Navbar />,
-        children: [{ path: '/', element: <HomePage /> },
-        {
-            path: '/shelf',
-            element: <ShelfPage />
-        }, {
-            path: '/ebook',
-            element: <EbookPage />
-        }, {
-            path: '/subscription',
-            element: <SubscriptionPage />
-        }, {
-            path: '/novel',
-            element: <NovelPage />
-        }, {
-            path: '/cartoon',
-            element: <CartoonPage />
-        }, {
-            path: '/selfhelp',
-            element: <SelfhelpPage />
-        }
+        element: (
+            <ProtectedRoute>
+                <Navbar />
+            </ProtectedRoute>
+        ),
+        children: [
+            {
+                path: '/',
+                element: <HomePage />
+            },
+            {
+                path: '/shelf',
+                element: <ShelfPage />
+            }, {
+                path: '/ebook',
+                element: <EbookPage />
+            }, {
+                path: '/subscription',
+                element: <SubscriptionPage />
+            }, {
+                path: '/novel',
+                element: <NovelPage />
+            }, {
+                path: '/cartoon',
+                element: <CartoonPage />
+            }, {
+                path: '/selfhelp',
+                element: <SelfhelpPage />
+            }
         ]
     }
 
