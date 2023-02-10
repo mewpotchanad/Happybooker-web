@@ -1,6 +1,7 @@
 import React from 'react'
-import { Link, Outlet } from "react-router-dom"
+import {  Outlet } from "react-router-dom"
 import Brand from './Brand'
+import Dropdown from './Dropdown'
 import Menu from './Menu'
 import Searchbar from "./Searchbar"
 
@@ -12,13 +13,12 @@ export default function Navbar() {
 
                     <Brand />
 
-                    <div>
+                    <div className='flex justify-center'>
                         <Searchbar />
                     </div>
 
                     <div className="flex items-center">
-                        <i class="fa-solid fa-circle-user w-3 mt-1 "></i>
-                        <Link to="/login" className="block py-2 pl-3 pr-4 text-white hover:text-[#FEC601]" >เข้าสู่ระบบ</Link>
+                        <Dropdown />
                     </div>
 
                 </div>

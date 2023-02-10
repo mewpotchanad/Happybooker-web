@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 export default function MenuItem({ children, active, to }) {
     return (
-    <Link className={`nav-link tw-px-10 rounded-lg ${ 
-        active ? "text-[#FEC601]" : "hover:bg-gray-200"
+    <Link className={` ${ 
+        active ? "text-[#FEC601]" : "text-[#808191]"
         }`} 
         to={to}
         >

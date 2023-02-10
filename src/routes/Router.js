@@ -45,6 +45,16 @@ const router = createBrowserRouter([
             </ProtectedRoute>
         )
     }, {
+        path: '/subscription',
+        element: (
+            <ProtectedRoute>
+                <SubscriptionPage />
+            </ProtectedRoute>
+        )
+    }, 
+    
+    
+    {
         path: '/',
         element: (
             <ProtectedRoute>
@@ -62,9 +72,6 @@ const router = createBrowserRouter([
             }, {
                 path: '/ebook',
                 element: <EbookPage />
-            }, {
-                path: '/subscription',
-                element: <SubscriptionPage />
             }, {
                 path: '/novel',
                 element: <NovelPage />
