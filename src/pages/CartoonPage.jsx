@@ -5,7 +5,7 @@ export default function CartoonPage() {
     <>
 
       {/* ------------- content -------------------------- */}
-      <div className='w-[1200px] ml-[300px] mt-[-120px]'>
+      <div className='w-[1200px] ml-[300px] mt-[-170px]'>
         <div>
           <h1 className='p-6 text-[#FFFFFF] text-2xl'>การ์ตูน</h1>
         </div>
