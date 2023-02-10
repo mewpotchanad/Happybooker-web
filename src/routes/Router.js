@@ -5,7 +5,7 @@ import ShelfPage from '../pages/ShelfPage';
 import EbookPage from '../pages/EbookPage';
 import ProfilePage from '../pages/ProfilePage';
 import AccountPage from '../pages/AccountPage';
-import SubscriptionPage from '../pages/SubscriptionPage';
+import CategoryPage from '../pages/CategoryPage';
 import RegisterPage from '../pages/RegisterPage';
 import NovelPage from '../pages/NovelPage';
 import CartoonPage from '../pages/CartoonPage';
@@ -26,9 +26,7 @@ const router = createBrowserRouter([
     }, {
         path: '/register',
         element: (
-            <ProtectedRoute>
                 <RegisterPage />
-            </ProtectedRoute>
         )
     }, {
         path: '/profile',
@@ -45,13 +43,27 @@ const router = createBrowserRouter([
             </ProtectedRoute>
         )
     }, {
-        path: '/subscription',
+        path: '/category',
         element: (
             <ProtectedRoute>
-                <SubscriptionPage />
+                <CategoryPage />
             </ProtectedRoute>
         )
-    }, 
+    }, {
+        path: '/shelf',
+        element: (
+            <ProtectedRoute>
+                <ShelfPage />
+            </ProtectedRoute>
+        )
+    }, {
+        path: '/ebook',
+        element: (
+            <ProtectedRoute>
+                <EbookPage />
+            </ProtectedRoute>
+        )
+    },
     
     
     {
@@ -65,13 +77,6 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <HomePage />
-            },
-            {
-                path: '/shelf',
-                element: <ShelfPage />
-            }, {
-                path: '/ebook',
-                element: <EbookPage />
             }, {
                 path: '/novel',
                 element: <NovelPage />

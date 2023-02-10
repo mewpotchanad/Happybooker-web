@@ -4,7 +4,7 @@ export default function NovelPage() {
   return (
     <>
       {/* ------------- content -------------------------- */}
-      <div className='w-[1200px] ml-[300px] mt-[-170px]'>
+      <div className='w-[1200px] ml-[300px] mt-[-190px]'>
         <div>
           <h1 className='p-6 text-[#FFFFFF] text-2xl'>นิยาย</h1>
         </div>

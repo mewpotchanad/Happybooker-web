@@ -8,7 +8,7 @@ const menuList = [
         pathname: '/'
     }, {
         icon: <i class="fa-sharp fa-solid fa-cube" />,
-        pathname: '/'
+        pathname: '/category'
     }
 ]
 

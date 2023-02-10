@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import Menu from '../layouts/Menu';
+import useAuth from '../hooks/useAuth';
 
 export default function AccountPage() {
+  const { logout } = useAuth();
   return (
     <>
       <nav className="px-10 py-5">
@@ -40,9 +42,8 @@ export default function AccountPage() {
           <div className='p-6 w-5/12 m-auto'>
           <img src="user.png" className="w-20 m-auto" alt="user" />
           <p className='text-center text-xl p-4 text-white'>Full name</p>
-          <button className='w-full text-white bg-[#FEC601] rounded-md text-center p-5 mb-5'>สมัคร subscription</button>
-          <button className='w-full text-white bg-[#FEC601] rounded-md text-center p-5 mb-5'>ข้อมูลส่วนตัว</button>
-          <button className='w-full text-white bg-[#FEC601] rounded-md text-center p-5 mb-5'>ออกจากระบบ</button>
+          <button className='w-full text-white bg-[#FEC601] rounded-md text-center p-5 mb-5'><Link to="/profile">ข้อมูลส่วนตัว</Link></button>
+          <button className='w-full text-white bg-[#FEC601] rounded-md text-center p-5 mb-5' onClick={logout}><Link to="/">ออกจากระบบ</Link></button>
           </div>
 
 
