@@ -19,7 +19,7 @@ export default function Dropdown() {
     return (
         <div className='flex justify-end'>
             <DropdownToggle onClick={() => setOpen(!open)} />
-            <DropdownMenu open={open} />
+            <DropdownMenu open={open} onClose={() => setOpen(false)} />
         </div>
     )
 }

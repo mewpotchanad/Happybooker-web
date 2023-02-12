@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import jwtDecode from 'jwt-decode'
 
 import * as authApi from '../apis/auth-api'
@@ -11,12 +11,25 @@ export default function AuthContextProvider({ children }) {
         getAccessToken() ? true : null
     )
 
+    useEffect(() => {
+        const fetchAuthUser = async () => {
+          try {
+            const res = await authApi.getMe();
+            setAuthenticatedUser(res.data.user);
+          } catch (err) {
+            removeAccessToken();
+          }
+        };
+        if (getAccessToken()) {
+          fetchAuthUser();
+        }
+      }, []);
+
     const login = async (userName, password) => {
         const res = await authApi.login({ userName, password })
         console.log(res.data.accessToken)
         setAccessToken(res.data.accessToken)
         setAuthenticatedUser(jwtDecode(res.data.accessToken))
-
     }
 
     const logout = () => {

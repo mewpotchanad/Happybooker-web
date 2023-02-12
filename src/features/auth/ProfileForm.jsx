@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 export default function ProfileForm() {
   return (
     <div className='p-6'>
@@ -20,7 +21,7 @@ export default function ProfileForm() {
               <p className='text-white w-32'>mewmew</p>
             </div>
             <div>
-              <button className='bg-[#FEC601] w-28 text-white p-1 rounded'>แก้ไขข้อมูล</button>
+              <button className='bg-[#FEC601] w-28 text-white p-1 rounded mt-2'>แก้ไขข้อมูล</button>
             </div>
           </div>
   )
