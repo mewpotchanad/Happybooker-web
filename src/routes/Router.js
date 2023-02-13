@@ -13,6 +13,7 @@ import SelfhelpPage from '../pages/SelfhelpPage';
 import Navbar from '../layouts/Navbar';
 import RedirectiIfAuthenticate from '../features/auth/RedirectiIfAuthenticate';
 import ProtectedRoute from '../features/auth/ProtectedRoute';
+import EditProfilePage from '../pages/EditProfilePage'
 
 
 const router = createBrowserRouter([
@@ -61,6 +62,13 @@ const router = createBrowserRouter([
         element: (
             <ProtectedRoute>
                 <EbookPage />
+            </ProtectedRoute>
+        )
+    }, {
+        path: '/editprofile',
+        element: (
+            <ProtectedRoute>
+                <EditProfilePage />
             </ProtectedRoute>
         )
     },

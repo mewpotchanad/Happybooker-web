@@ -60,6 +60,7 @@ export default function RegisterForm() {
                                 value={input.firstName}
                                 onChange={handleChangeInput}
                                 error={error.firstName}
+                                className='text-gray-900'
                             />
                         </div>
                         <div className='w-52 '>
@@ -69,6 +70,7 @@ export default function RegisterForm() {
                                 value={input.lastName}
                                 onChange={handleChangeInput}
                                 error={error.lastName}
+                                className='text-gray-900'
                             />
                         </div>
                     </div>
@@ -80,6 +82,7 @@ export default function RegisterForm() {
                         value={input.userName}
                         onChange={handleChangeInput}
                         error={error.userName}
+                        className='text-gray-900'
                     />
                 </div>
                 <div>
@@ -90,6 +93,7 @@ export default function RegisterForm() {
                         type="email"
                         onChange={handleChangeInput}
                         error={error.email}
+                        className='text-gray-900'
                     />
                 </div>
                 <div>
@@ -100,6 +104,7 @@ export default function RegisterForm() {
                         type="password"
                         onChange={handleChangeInput}
                         error={error.password}
+                        className='text-gray-900'
                     />
                 </div>
                 <div>
@@ -110,6 +115,7 @@ export default function RegisterForm() {
                         type="password"
                         onChange={handleChangeInput}
                         error={error.confirmPassword}
+                        className='text-gray-900'
                     />
                 </div>
 
