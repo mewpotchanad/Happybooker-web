@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Brand from '../layouts/Brand'
 import Dropdown from '../layouts/Dropdown'
 import Menu from '../layouts/Menu'
 import { Link, useNavigate } from "react-router-dom";
 import * as userService from '../apis/user-api'
+
 
 
 export default function EditProfilePage() {
@@ -12,6 +13,7 @@ export default function EditProfilePage() {
     const [email, setEmail] = useState('')
     const [userName, setUserName] = useState('')
     const navigate = useNavigate()
+    
 
 
     const handleSubmitForm = async (e) => {
@@ -20,6 +22,8 @@ export default function EditProfilePage() {
         navigate('/profile')
         window.location.reload()
     }
+
+
 
     return (
         <>
@@ -50,7 +54,7 @@ export default function EditProfilePage() {
                 </div>
 
                 {/* --------- box ------------ */}
-                
+
                 <form onSubmit={handleSubmitForm
                 } className='p-6'>
                     <div className='flex mb-5' id='firstname'>

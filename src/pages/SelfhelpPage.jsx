@@ -1,6 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'
+import Card from '../layouts/Card'
+import * as ebookApi from '../apis/ebook-api'
 
 export default function SelfhelpPage() {
+  const [ebooks, setEbooks] = useState([]);
+
+  useEffect(() => {
+    const fetchEbook = async () => {
+      const res = await ebookApi.getAllEbook();
+      const selfhelp = res.data.filter(el => el.category === 'พัฒนาตนเอง')
+      console.log(res.data)
+      setEbooks(selfhelp);
+    };
+    fetchEbook();
+  }, []);
+
   return (
     <>
 
@@ -11,55 +25,10 @@ export default function SelfhelpPage() {
         </div>
 
         {/* ------------- card -------------------------- */}
-        <div className='bg-[#E3E3E4] w-56 m-4 flex md:inline-flex rounded'>
-          <div>
-            <img src="1.jpg" className="w-11/12 m-auto shadow-md mt-2" alt="Atomic Habits" />
-            <div>
-              <p className='text-black text-center text-sm m-3'>Atomic Habits เพราะชีวิตดีได้กว่าที่เป็น</p>
-            </div>
-            <div className='flex  justify-around'>
-              <button className='bg-[#FEC601] text-white p-1 w-24 rounded m-2'>รายละเอียด</button>
-              <button className='bg-[#FEC601] text-white p-1 w-24 rounded m-2'>เข้าชั้น</button>
-            </div>
-          </div>
-        </div>
-
-
-
-
-
-        <div className='bg-[#E3E3E4] w-56 m-4 flex md:inline-flex rounded'>
-          <div>
-            <img src="6.jpg" className="w-11/12 m-auto shadow-md mt-2" alt="donWorryBook" />
-            <div>
-              <p className='text-black text-center text-sm m-3'>Don't Worry About Small Things : แล้วชีวิตจะผ่านไปได้ด้วยดี</p>
-            </div>
-            <div className='flex  justify-around'>
-              <button className='bg-[#FEC601] text-white p-1 w-24 rounded m-2'>รายละเอียด</button>
-              <button className='bg-[#FEC601] text-white p-1 w-24 rounded m-2'>เข้าชั้น</button>
-            </div>
-          </div>
-        </div>
-
-        <div className='bg-[#E3E3E4] w-56 m-4 flex md:inline-flex rounded'>
-          <div>
-            <img src="7.jpg" className="w-11/12 m-auto shadow-md mt-2" alt="พูดดี พูดยังไง ให้ได้ใจคนทุกสถานการณ์" />
-            <div>
-              <p className='text-black text-center text-sm m-3'>พูดดี พูดยังไง ให้ได้ใจคนทุกสถานการณ์</p>
-            </div>
-            <div className='flex  justify-around'>
-              <button className='bg-[#FEC601] text-white p-1 w-24 rounded m-2'>รายละเอียด</button>
-              <button className='bg-[#FEC601] text-white p-1 w-24 rounded m-2'>เข้าชั้น</button>
-            </div>
-          </div>
-        </div>
-
-
-
+        {ebooks.map(el => (
+          <Card key={el.id} ebook={el} />
+        ))}
       </div>
-
-
-
     </>
   )
 }

@@ -1,6 +1,20 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import Card from '../layouts/Card'
+import * as ebookApi from '../apis/ebook-api'
 
 export default function CartoonPage() {
+  const [ebooks, setEbooks] = useState([]);
+
+  useEffect(() => {
+    const fetchEbook = async () => {
+      const res = await ebookApi.getAllEbook();
+      const cartoon = res.data.filter(el => el.category === 'การ์ตูน')
+      console.log(res.data)
+      setEbooks(cartoon);
+    };
+    fetchEbook();
+  }, []);
+
   return (
     <>
 
@@ -12,40 +26,13 @@ export default function CartoonPage() {
 
         {/* ------------- card -------------------------- */}
 
-        <div className='bg-[#E3E3E4] w-56 m-4 flex md:inline-flex rounded'>
-          <div>
-            <img src="4.jpg" className="w-11/12 m-auto shadow-md mt-2" alt="น้องชายจอมห้าวปะทะพี่สาวโอตาคุ" />
-            <div>
-              <p className='text-black text-center text-sm m-3'>น้องชายจอมห้าวปะทะพี่สาวโอตาคุ เล่ม 4 (ฉบับการ์ตูน)</p>
-            </div>
-            <div className='flex  justify-around'>
-              <button className='bg-[#FEC601] text-white p-1 w-24 rounded m-2'>รายละเอียด</button>
-              <button className='bg-[#FEC601] text-white p-1 w-24 rounded m-2'>เข้าชั้น</button>
-            </div>
-          </div>
-        </div>
-
-        <div className='bg-[#E3E3E4] w-56 m-4 flex md:inline-flex rounded'>
-          <div>
-            <img src="5.jpg" className="w-11/12 m-auto shadow-md mt-2" alt="บันทึกสงครามดาบวิเศษ เวิร์นดิโอ" />
-            <div>
-              <p className='text-black text-center text-sm m-3'>บันทึกสงครามดาบวิเศษ เวิร์นดิโอ เล่ม 1 (ฉบับการ์ตูน)</p>
-            </div>
-            <div className='flex  justify-around'>
-              <button className='bg-[#FEC601] text-white p-1 w-24 rounded m-2'>รายละเอียด</button>
-              <button className='bg-[#FEC601] text-white p-1 w-24 rounded m-2'>เข้าชั้น</button>
-            </div>
-          </div>
-        </div>
-
-
-
-
+        {ebooks.map(el => (
+          <Card key={el.id} ebook={el} />
+        ))}
 
       </div>
-
-
 
     </>
   )
 }
+
