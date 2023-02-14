@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Brand from '../layouts/Brand'
 import Dropdown from '../layouts/Dropdown'
 import Menu from '../layouts/Menu'

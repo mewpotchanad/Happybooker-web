@@ -25,9 +25,7 @@ export default function NovelPage() {
 
         {/* ------------- card -------------------------- */}
 
-        {ebooks.map(el => (
-          <Card key={el.id} ebook={el} />
-        ))}
+        <Card ebooks={ebooks} />
 
 
       </div>

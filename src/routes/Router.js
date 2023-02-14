@@ -58,7 +58,7 @@ const router = createBrowserRouter([
             </ProtectedRoute>
         )
     }, {
-        path: '/ebook',
+        path: '/ebook/:ebookId',
         element: (
             <ProtectedRoute>
                 <EbookPage />

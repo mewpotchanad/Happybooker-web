@@ -9,7 +9,6 @@ export default function HomePage() {
   useEffect(() => {
     const fetchEbook = async () => {
       const res = await ebookApi.getAllEbook();
-      console.log(res.data)
       setEbooks(res.data);
     };
     fetchEbook();
@@ -24,18 +23,8 @@ export default function HomePage() {
         </div>
 
         {/* ------------- card -------------------------- */}
-        {ebooks.map(el => (
-          <Card key={el.id} ebook={el}  />
-        ))}
-
-
-
-
+        <Card ebooks={ebooks} />
       </div>
-
-
-
     </>
-
   )
 }

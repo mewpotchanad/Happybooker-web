@@ -4,12 +4,13 @@ import * as ebookApi from '../apis/ebook-api'
 
 export default function CartoonPage() {
   const [ebooks, setEbooks] = useState([]);
+  console.log(ebooks);
 
   useEffect(() => {
     const fetchEbook = async () => {
       const res = await ebookApi.getAllEbook();
       const cartoon = res.data.filter(el => el.category === 'การ์ตูน')
-      console.log(res.data)
+      // console.log(res.data)
       setEbooks(cartoon);
     };
     fetchEbook();
@@ -26,12 +27,10 @@ export default function CartoonPage() {
 
         {/* ------------- card -------------------------- */}
 
-        {ebooks.map(el => (
-          <Card key={el.id} ebook={el} />
-        ))}
-
+        {/* {ebooks.map(el => ( */}
+          <Card ebooks={ebooks} />
+        {/* ))} */}
       </div>
-
     </>
   )
 }

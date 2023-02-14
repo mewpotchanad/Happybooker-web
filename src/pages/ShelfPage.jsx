@@ -3,8 +3,11 @@ import Brand from '../layouts/Brand';
 import Dropdown from '../layouts/Dropdown';
 import Menu from '../layouts/Menu';
 import ShelfCard from '../layouts/ShelfCard';
+import  { useState } from 'react'
 
 export default function ShelfPage() {
+  const [ebooks, setEbooks] = useState([]);
+
   return (
     <>
       <nav className="px-10 py-5">
@@ -32,7 +35,9 @@ export default function ShelfPage() {
         </div>
 
         {/* ------------- card -------------------------- */}
-        <ShelfCard />
+        {ebooks.map(el => (
+          <ShelfCard key={el.id} ebook={el} />
+        ))}
 
 
       </div>
