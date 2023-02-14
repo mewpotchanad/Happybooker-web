@@ -1,8 +1,13 @@
-import { Link, useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
+import * as ebookApi from '../apis/ebook-api'
 
 export default function Card({ ebooks }) {
     const { ebookId } = useParams()
     console.log(ebooks)
+    const { authenticatedUser } = useAuth()
+    console.log(authenticatedUser);
+
 
     return <>
         {ebooks.map(el => (
@@ -15,7 +20,11 @@ export default function Card({ ebooks }) {
                     <div className='flex justify-around'>
                         <button className='bg-[#FEC601] text-white p-1 w-24 rounded m-2'>
                             <Link to={`/ebook/${el.id}`} >รายละเอียด</Link></button>
-                        <button className='bg-[#FEC601] text-white p-1 w-24 rounded m-2'>เข้าชั้น</button>
+                        <button
+                            className='bg-[#FEC601] text-white p-1 w-24 rounded m-2'
+                            onClick={async () => await ebookApi.postEbookById(el.id, authenticatedUser.id)}
+                        >เข้าชั้น
+                        </button>
                     </div>
                 </div>
             </div>

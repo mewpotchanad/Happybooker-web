@@ -3,10 +3,21 @@ import Brand from '../layouts/Brand';
 import Dropdown from '../layouts/Dropdown';
 import Menu from '../layouts/Menu';
 import ShelfCard from '../layouts/ShelfCard';
-import  { useState } from 'react'
+import { useState, useEffect } from 'react'
+import * as ebookApi from '../apis/ebook-api'
+import useAuth from '../hooks/useAuth';
 
 export default function ShelfPage() {
   const [ebooks, setEbooks] = useState([]);
+  const { authenticatedUser } = useAuth()
+
+  useEffect(() => {
+    const fetchEbook = async () => {
+      const res = await ebookApi.getShowEbookFromShelf(authenticatedUser.id);
+      setEbooks(res.data.user);
+    };
+    fetchEbook();
+  }, [authenticatedUser.id]);
 
   return (
     <>
@@ -22,7 +33,6 @@ export default function ShelfPage() {
         </div>
       </nav>
 
-
       <div className='flex'>
 
         <Menu />
@@ -35,15 +45,8 @@ export default function ShelfPage() {
         </div>
 
         {/* ------------- card -------------------------- */}
-        {ebooks.map(el => (
-          <ShelfCard key={el.id} ebook={el} />
-        ))}
-
-
+        <ShelfCard ebooks={ebooks} />
       </div>
-
-
-
     </>
   )
 }
