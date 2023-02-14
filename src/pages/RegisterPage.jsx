@@ -5,7 +5,7 @@ import RegisterForm from "../features/auth/RegisterForm";
 export default function RegisterPage() {
     return (
         <section>
-            <div className="w-[100vw] h-screen flex justify-center items-center justify-around">
+            <div className="w-[100vw] h-screen flex justify-center items-center">
                 <Link to="/">
                     <img className="mt-[20px]" src="HAPPY BOOKER_LOGIN.png" alt="logo" />
                 </Link>
