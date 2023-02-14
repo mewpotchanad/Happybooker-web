@@ -6,7 +6,9 @@ axios.defaults.baseURL = process.env.REACT_APP_ENDPOINT_URL;
 axios.interceptors.request.use(
     config => {
         if(getAccessToken()) {
-            config.headers.authorization = `Bearer ${setAccessToken()}`
+            const token = getAccessToken()
+            console.log(token, '===');
+            config.headers.authorization = `Bearer ${getAccessToken()}`
         }
         return config
     }, 

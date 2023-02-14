@@ -6,7 +6,7 @@ export default function RegisterPage() {
     return (
         <section>
             <div className="w-[100vw] h-screen flex justify-center items-center justify-around">
-                <Link to="#">
+                <Link to="/">
                     <img className="mt-[20px]" src="HAPPY BOOKER_LOGIN.png" alt="logo" />
                 </Link>
 

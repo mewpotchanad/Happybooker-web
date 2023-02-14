@@ -2,6 +2,7 @@ import React from 'react';
 import Brand from '../layouts/Brand';
 import Dropdown from '../layouts/Dropdown';
 import Menu from '../layouts/Menu';
+import ShelfCard from '../layouts/ShelfCard';
 
 export default function ShelfPage() {
   return (
@@ -31,12 +32,7 @@ export default function ShelfPage() {
         </div>
 
         {/* ------------- card -------------------------- */}
-        <div className='bg-[#E3E3E4] w-52 m-4 flex md:inline-flex rounded'>
-          <div>
-            <img src="1.jpg" className="w-11/12 m-auto shadow-md mt-2 mb-2" alt="Atomic Habits" />
-          </div>
-        </div>
-
+        <ShelfCard />
 
 
       </div>

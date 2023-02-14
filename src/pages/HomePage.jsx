@@ -1,4 +1,5 @@
 import React from 'react'
+import Card from '../layouts/Card'
 
 export default function HomePage() {
   return (
@@ -10,18 +11,7 @@ export default function HomePage() {
         </div>
 
         {/* ------------- card -------------------------- */}
-        <div className='bg-[#E3E3E4] w-56 m-4 flex md:inline-flex rounded'>
-          <div>
-            <img src="1.jpg" className="w-11/12 m-auto shadow-md mt-2" alt="Atomic Habits" />
-            <div>
-              <p className='text-black text-center text-sm m-3'>Atomic Habits เพราะชีวิตดีได้กว่าที่เป็น</p>
-            </div>
-            <div className='flex  justify-around'>
-              <button className='bg-[#FEC601] text-white p-1 w-24 rounded m-2'>รายละเอียด</button>
-              <button className='bg-[#FEC601] text-white p-1 w-24 rounded m-2'>เข้าชั้น</button>
-            </div>
-          </div>
-        </div>
+        <Card />
 
         <div className='bg-[#E3E3E4] w-56 m-4 flex md:inline-flex rounded'>
           <div>

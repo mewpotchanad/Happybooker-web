@@ -1,12 +1,26 @@
-import React from 'react';
-import ProfileEditForm from '../components/ProfileEditForm';
+import React, { useState } from 'react';
 import Brand from '../layouts/Brand'
 import Dropdown from '../layouts/Dropdown'
 import Menu from '../layouts/Menu'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import * as userService from '../apis/user-api'
 
 
 export default function EditProfilePage() {
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
+    const [email, setEmail] = useState('')
+    const [userName, setUserName] = useState('')
+    const navigate = useNavigate()
+
+
+    const handleSubmitForm = async (e) => {
+        e.preventDefault()
+        await userService.updateProfile({ firstName, lastName, email, userName })
+        navigate('/profile')
+        window.location.reload()
+    }
+
     return (
         <>
             <nav className="px-10 py-5">
@@ -36,26 +50,48 @@ export default function EditProfilePage() {
                 </div>
 
                 {/* --------- box ------------ */}
-                <div className='p-6'>
+                
+                <form onSubmit={handleSubmitForm
+                } className='p-6'>
                     <div className='flex mb-5' id='firstname'>
                         <p className='w-32'>Firstname</p>
-                        <ProfileEditForm />
+                        <input
+                            type="text"
+                            className="w-[400px] p-2  text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 "
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
+                        />
                     </div>
                     <div className='flex mb-5' id='lastname'>
                         <p className='w-32'>Lastname</p>
-                        <ProfileEditForm />
+                        <input
+                            type="text"
+                            className="w-[400px] p-2  text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 "
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
+                        />
                     </div>
                     <div className='flex mb-5' id='email'>
                         <p className='w-32'>Email</p>
-                        <ProfileEditForm />
+                        <input
+                            type="text"
+                            className="w-[400px] p-2  text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 "
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
                     </div>
                     <div className='flex mb-5' id='username'>
                         <p className='w-32'>Username</p>
-                        <ProfileEditForm />
+                        <input
+                            type="text" className="w-[400px] p-2  text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 "
+                            value={userName}
+                            onChange={(e) => setUserName(e.target.value)}
+                        />
                     </div>
                     <div className='flex gap-4'>
                         <button
                             className='bg-[#FEC601] w-20 text-white p-1 rounded mt-2'
+                            type='submit'
                         >
                             ยืนยัน
                         </button>
@@ -65,7 +101,7 @@ export default function EditProfilePage() {
                             <Link to="/profile"> ยกเลิก </Link>
                         </button>
                     </div>
-                </div>
+                </form>
 
             </div>
 
