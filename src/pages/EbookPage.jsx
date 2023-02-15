@@ -5,10 +5,16 @@ import Menu from '../layouts/Menu';
 import * as ebookApi from '../apis/ebook-api'
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+// import useAuth from '../hooks/useAuth';
 
 export default function EbookPage({ ebook }) {
   const [ebooks, setEbooks] = useState([]);
   const { ebookId } = useParams()
+  // const { authenticatedUser } = useAuth()
+
+  // const handleSubmit = async (el) => {
+  //   await ebookApi.postEbookById(el.id, authenticatedUser.id)
+  // }
 
   useEffect(() => {
     const fetchEbook = async () => {
@@ -32,7 +38,6 @@ export default function EbookPage({ ebook }) {
         </div>
       </nav>
 
-
       <div className='flex'>
 
         <Menu />
@@ -52,7 +57,6 @@ export default function EbookPage({ ebook }) {
             <img src={ebooks.image} className="w-62 shadow-md m-auto" alt={ebooks.title} />
           </div>
 
-
           <div className=' ml-20'>
             <div className='flex mb-5' id='author'>
               <p className='w-32 text-white'>โดย</p>
@@ -71,14 +75,16 @@ export default function EbookPage({ ebook }) {
               <p className='text-white w-96 text-xs'>{ebooks.description}</p>
             </div>
             <div>
-              <button className='bg-[#FEC601] w-20 text-white p-1 rounded'>เข้าชั้น</button>
+              <button
+                // onClick={async (el) => await ebookApi.postEbookById(el.id, authenticatedUser.id)}
+                className='bg-[#FEC601] w-20 text-white p-1 rounded'
+              >
+                เข้าชั้น
+              </button>
             </div>
           </div>
         </div>
-
-
       </div>
-
     </>
   )
 }

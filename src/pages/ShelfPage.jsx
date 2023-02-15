@@ -39,7 +39,7 @@ export default function ShelfPage() {
 
       </div>
       {/* ------------- content -------------------------- */}
-      <div className='w-[1200px] ml-[300px] mt-[-190px]'>
+      <div className='w-[1100px] ml-[300px] mt-[-190px]'>
         <div>
           <h1 className='p-6 text-[#FFFFFF] text-2xl'>ชั้นหนังสือของฉัน</h1>
         </div>

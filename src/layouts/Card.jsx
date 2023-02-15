@@ -4,11 +4,8 @@ import * as ebookApi from '../apis/ebook-api'
 
 export default function Card({ ebooks }) {
     const { ebookId } = useParams()
-    console.log(ebooks)
     const { authenticatedUser } = useAuth()
-    console.log(authenticatedUser);
-
-
+      
     return <>
         {ebooks.map(el => (
             <div className='bg-[#E3E3E4] w-56 m-4 flex md:inline-flex rounded'>
