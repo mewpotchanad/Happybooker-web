@@ -1,12 +1,11 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import LoginForm from "../features/auth/LoginForm";
 import RegisterContainer from "../features/auth/RegisterContainer";
-
 
 export default function LoginPage() {
   return (
     <section>
-      <div className="w-[100vw] h-screen flex justify-center items-center justify-around">
+      <div className="w-[100vw] h-screen flex justify-center items-center">
         <Link to="/">
           <img className="mt-[20px]" src="HAPPY BOOKER_LOGIN.png" alt="logo" />
         </Link>
@@ -17,6 +16,9 @@ export default function LoginPage() {
               <LoginForm />
             </div>
             <RegisterContainer />
+            <div className="flex justify-center pb-2">
+              <Link to="/admin">Admin?</Link>
+            </div>
           </div>
         </div>
       </div>
