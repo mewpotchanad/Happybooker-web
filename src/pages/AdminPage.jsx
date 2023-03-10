@@ -21,7 +21,7 @@ export default function AdminPage() {
               <div>
                 <input className="rounded-md w-[800px]" />
               </div>
-              <button className="bg-[#FEC601] text-white rounded-md px-2">อัพโหลด</button>
+              <button className="bg-[#FEC601] text-white rounded-md px-2 ml-1">อัพโหลด</button>
             </div>
             <div className="flex gap-2">
               <div className="w-20">นักเขียน</div>
