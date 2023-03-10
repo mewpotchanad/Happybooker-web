@@ -15,6 +15,8 @@ import RedirectiIfAuthenticate from "../features/auth/RedirectiIfAuthenticate";
 import ProtectedRoute from "../features/auth/ProtectedRoute";
 import EditProfilePage from "../pages/EditProfilePage";
 import AdminPage from "../pages/AdminPage";
+import AdminEditEbook from "../pages/AdminEditEbook";
+import AdminLogin from "../pages/AdminLogin";
 
 const router = createBrowserRouter([
   {
@@ -108,7 +110,9 @@ const router = createBrowserRouter([
       }
     ]
   },
-  { path: "/admin", element: <AdminPage /> }
+  { path: "/admin", element: <AdminPage /> },
+  { path: "/admin-edit", element: <AdminEditEbook /> },
+  { path: "/admin-login", element: <AdminLogin /> }
 ]);
 
 export default function Router() {
