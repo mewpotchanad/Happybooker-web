@@ -13,38 +13,38 @@ export default function AdminPage() {
             <div className="flex gap-2">
               <div className="w-20">ชื่อหนังสือ</div>
               <div>
-                <input className="rounded-md w-[800px]" />
+                <input className="rounded-md w-[800px] text-black px-2" />
               </div>
             </div>
             <div className="flex gap-2">
               <div className="w-20">หน้าปก</div>
               <div>
-                <input className="rounded-md w-[800px]" />
+                <input className="rounded-md w-[800px] text-black px-2" />
               </div>
               <button className="bg-[#FEC601] text-white rounded-md px-2 ml-1">อัพโหลด</button>
             </div>
             <div className="flex gap-2">
               <div className="w-20">นักเขียน</div>
               <div>
-                <input className="rounded-md w-[800px]" />
+                <input className="rounded-md w-[800px] text-black px-2" />
               </div>
             </div>
             <div className="flex gap-2">
               <div className="w-20">สำนักพิมพ์</div>
               <div>
-                <input className="rounded-md w-[800px]" />
+                <input className="rounded-md w-[800px] text-black px-2" />
               </div>
             </div>
             <div className="flex gap-2">
               <div className="w-20">หมวดหมู่</div>
               <div>
-                <input className="rounded-md w-[800px]" />
+                <input className="rounded-md w-[800px] text-black px-2" />
               </div>
             </div>
             <div className="flex gap-2">
               <div className="w-20">เรื่องย่อ</div>
               <div>
-                <textarea className="rounded-md w-[800px]" />
+                <textarea className="rounded-md w-[800px] text-black px-2" />
               </div>
             </div>
             <div className="flex justify-center gap-3">
