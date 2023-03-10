@@ -52,15 +52,15 @@ export default function RegisterForm() {
             </h1>
             <form className="space-y-4 md:space-y-6" onSubmit={handleSubmitForm} action="#">
                 <div>
-                    <div className="flex justify-between">
-                        <div className='w-52'>
+                    <div className="flex justify-between text-gray-900">
+                        <div className='w-52 '>
                             <Input
                                 placeholder="Firstname"
                                 name="firstName"
                                 value={input.firstName}
                                 onChange={handleChangeInput}
                                 error={error.firstName}
-                                className='text-gray-900'
+                                
                             />
                         </div>
                         <div className='w-52 '>
@@ -75,17 +75,16 @@ export default function RegisterForm() {
                         </div>
                     </div>
                 </div>
-                <div>
+                <div className='text-gray-900'>
                     <Input
                         placeholder="Username"
                         name="userName"
                         value={input.userName}
                         onChange={handleChangeInput}
                         error={error.userName}
-                        className='text-gray-900'
                     />
                 </div>
-                <div>
+                <div className='text-gray-900'>
                     <Input
                         placeholder="Email"
                         name="email"
@@ -93,10 +92,9 @@ export default function RegisterForm() {
                         type="email"
                         onChange={handleChangeInput}
                         error={error.email}
-                        className='text-gray-900'
                     />
                 </div>
-                <div>
+                <div className='text-gray-900'>
                     <Input
                         placeholder="New password"
                         name="password"
@@ -104,10 +102,9 @@ export default function RegisterForm() {
                         type="password"
                         onChange={handleChangeInput}
                         error={error.password}
-                        className='text-gray-900'
                     />
                 </div>
-                <div>
+                <div className='text-gray-900'>
                     <Input
                         placeholder="Confirm password"
                         name="confirmPassword"
@@ -115,7 +112,6 @@ export default function RegisterForm() {
                         type="password"
                         onChange={handleChangeInput}
                         error={error.confirmPassword}
-                        className='text-gray-900'
                     />
                 </div>
 

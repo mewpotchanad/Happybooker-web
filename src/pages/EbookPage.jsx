@@ -5,16 +5,10 @@ import Menu from '../layouts/Menu';
 import * as ebookApi from '../apis/ebook-api'
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-// import useAuth from '../hooks/useAuth';
 
-export default function EbookPage({ ebook }) {
+export default function EbookPage() {
   const [ebooks, setEbooks] = useState([]);
   const { ebookId } = useParams()
-  // const { authenticatedUser } = useAuth()
-
-  // const handleSubmit = async (el) => {
-  //   await ebookApi.postEbookById(el.id, authenticatedUser.id)
-  // }
 
   useEffect(() => {
     const fetchEbook = async () => {
@@ -49,7 +43,6 @@ export default function EbookPage({ ebook }) {
           <h1 className='p-6 text-[#FFFFFF] text-2xl'>ข้อมูลหนังสือ</h1>
         </div>
 
-        {/* --------- box ------------ */}
         {/* ---------- title ------------- */}
         <h1 className='text-xl pl-6 mt-5'>{ebooks.title}</h1>
         <div className='flex justify-start mt-10'>

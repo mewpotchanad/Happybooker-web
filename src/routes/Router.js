@@ -27,7 +27,9 @@ const router = createBrowserRouter([
     }, {
         path: '/register',
         element: (
+            <RedirectiIfAuthenticate>
                 <RegisterPage />
+            </RedirectiIfAuthenticate>
         )
     }, {
         path: '/profile',
@@ -72,8 +74,8 @@ const router = createBrowserRouter([
             </ProtectedRoute>
         )
     },
-    
-    
+
+
     {
         path: '/',
         element: (

@@ -5,6 +5,7 @@ import useAuth from '../hooks/useAuth';
 
 export default function AccountPage() {
   const { logout } = useAuth();
+
   return (
     <>
       <nav className="px-10 py-5">
@@ -14,15 +15,11 @@ export default function AccountPage() {
             <img src="HAPPY BOOKER.png" className="w-44" alt="happy booker Logo" />
           </Link>
 
-
-
-
           {/* ---------------- เข้าสู่ระบบ ---------------- */}
           <div className="flex items-center">
             <img src="user.png" className="w-9" alt="user" />
             <Link to="#" className="block py-2 pl-3 pr-4 text-white hover:text-[#FEC601]" >เข้าสู่ระบบ</Link>
           </div>
-
         </div>
       </nav>
 
@@ -48,7 +45,6 @@ export default function AccountPage() {
 
 
         </div>
-
       </div >
     </>
   )

@@ -10,7 +10,7 @@ export default function Card({ ebooks }) {
         {ebooks.map(el => (
             <div className='bg-[#E3E3E4] w-56 m-4 flex md:inline-flex rounded'>
                 <div>
-                    <img src={el.image} className="w-[205px] h-[300px] m-auto shadow-md mt-2" alt={el.title} />
+                    <img src={el.image} className="w-[205px] h-[300px] m-auto shadow-md mt-2" key={el.id} alt={el.title} />
                     <div>
                         <p className='text-black text-center text-sm m-3'>{el.title}</p>
                     </div>
