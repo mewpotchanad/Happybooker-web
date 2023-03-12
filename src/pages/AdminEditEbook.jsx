@@ -1,41 +1,22 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import * as adminService from "../apis/admin-api";
 
 export default function AdminEditEbook() {
-  const [ebookList, setEbookList] = useState([]);
-
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [publisher, setPublisher] = useState("");
   const [author, setAuthor] = useState("");
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
+  const navigate = useNavigate();
 
-  const addEbooks = () => {
-    axios
-      .post("/admin", {
-        title: title,
-        image: image,
-        publisher: publisher,
-        author: author,
-        category: category,
-        description: description
-      })
-      .then((response) => {
-        const newEbook = {
-          title: response.data.title,
-          image: response.data.image,
-          publisher: response.data.publisher,
-          author: response.data.author,
-          category: response.data.category,
-          description: response.data.description
-        };
-        setEbookList([...ebookList, newEbook]);
-      })
-      .catch((error) => {
-        console.error("Error adding ebook: ", error);
-      });
+  const handleSubmitForm = async (e) => {
+    e.preventDefault();
+    await adminService.editEbook({ title, image, publisher, author, category, description });
+    navigate("/admin");
+    window.location.reload();
   };
 
   return (
@@ -43,7 +24,7 @@ export default function AdminEditEbook() {
       <div className="bg-white w-full p-4">
         <div className="font-bold text-xl">Edit ebook</div>
       </div>
-      <form>
+      <form onSubmit={handleSubmitForm}>
         <div className="m-auto w-[70%] mt-10">
           <div className="border-2 border-white p-10 rounded-md flex justify-center">
             <div className="flex flex-col gap-4 w-[95%]">
@@ -119,7 +100,7 @@ export default function AdminEditEbook() {
                 <Link to="/admin" className="bg-[#FEC601] text-white rounded-md px-4">
                   ยกเลิก
                 </Link>
-                <button className="bg-[#FEC601] text-white rounded-md px-4" onClick={addEbooks}>
+                <button className="bg-[#FEC601] text-white rounded-md px-4" type="submit">
                   บันทึก
                 </button>
               </div>

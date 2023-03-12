@@ -3,12 +3,6 @@ import useAuth from "../hooks/useAuth";
 import * as ebookApi from "../apis/ebook-api";
 
 export default function CardAdmin({ ebooks }) {
-  // const ebooks = () => {
-  //   getAllEbook().then((res) => {
-  //     setEbookList(res.data);
-  //   });
-  // };
-
   const handleEdit = (id) => {
     // Implement logic for editing an ebook
     console.log(`Editing ebook with id ${id}`);
@@ -23,8 +17,8 @@ export default function CardAdmin({ ebooks }) {
   return (
     <>
       {ebooks.map((el) => (
-        <div className="flex gap-5 p-4 border-b-2 border-white" key={el.id}>
-          <div>
+        <div className="flex gap-8 p-4 border-b-2 border-white" key={el.id}>
+          <div className="px-6">
             <img
               src={el.image}
               className="w-[100px] h-[150px] m-auto shadow-md mt-2"
@@ -41,7 +35,7 @@ export default function CardAdmin({ ebooks }) {
                 className="bg-[#FEC601] text-white font-bold px-4 rounded-md"
                 // onClick={() => handleEdit(el.id)}
               >
-                แก้ไข
+                <Link to="/admin-edit">แก้ไข</Link>
               </button>
               <button
                 className="bg-[#FEC601] text-white font-bold px-4 rounded-md"

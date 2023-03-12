@@ -24,23 +24,25 @@ export default function AdminPage() {
 
   return (
     <>
-      <div className="bg-white w-full p-4">
+      <div className="bg-white w-full p-4 fixed top-0">
         <div className="font-bold text-xl">Admin page</div>
       </div>
-      <div className="m-auto w-[70%] mt-10">
-        <div className="flex gap-5 my-4">
-          <div className="text-xl">Ebook list</div>
-          <button
-            to="/admin-add"
-            className="bg-[#FEC601] text-white font-bold px-4 rounded-md"
-            // onClick={handleAddEbook}
-          >
-            เพิ่ม
-          </button>
-        </div>
-        <hr className="border-2" />
-        <div className="w-[95%] m-auto">
-          <CardAdmin ebooks={ebooks} />
+      <div className="flex justify-center">
+        <div className="m-auto w-[70%] mt-20">
+          <div className="flex gap-5 my-4">
+            <div className="text-xl">Ebook list</div>
+            <button
+              to="/admin-add"
+              className="bg-[#FEC601] text-white font-bold px-4 rounded-md"
+              // onClick={handleAddEbook}
+            >
+              เพิ่ม
+            </button>
+          </div>
+          <hr className="border-2" />
+          <div className="w-[100%]">
+            <CardAdmin ebooks={ebooks} />
+          </div>
         </div>
       </div>
     </>
