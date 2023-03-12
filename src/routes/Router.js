@@ -17,6 +17,7 @@ import EditProfilePage from "../pages/EditProfilePage";
 import AdminPage from "../pages/AdminPage";
 import AdminEditEbook from "../pages/AdminEditEbook";
 import AdminLogin from "../pages/AdminLogin";
+import AdminAddEbook from "../pages/AdminAddEbook";
 
 const router = createBrowserRouter([
   {
@@ -112,7 +113,8 @@ const router = createBrowserRouter([
   },
   { path: "/admin", element: <AdminPage /> },
   { path: "/admin-edit", element: <AdminEditEbook /> },
-  { path: "/admin-login", element: <AdminLogin /> }
+  { path: "/admin-login", element: <AdminLogin /> },
+  { path: "/admin-add", element: <AdminAddEbook /> }
 ]);
 
 export default function Router() {

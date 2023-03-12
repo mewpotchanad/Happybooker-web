@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function AdminEditEbook() {
+export default function AdminAddEbook() {
   const [ebookList, setEbookList] = useState([]);
 
   const [title, setTitle] = useState("");
@@ -41,7 +41,7 @@ export default function AdminEditEbook() {
   return (
     <>
       <div className="bg-white w-full p-4">
-        <div className="font-bold text-xl">Edit ebook</div>
+        <div className="font-bold text-xl">Add ebook</div>
       </div>
       <form>
         <div className="m-auto w-[70%] mt-10">

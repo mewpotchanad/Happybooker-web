@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import * as ebookApi from "../apis/ebook-api";
 import CardAdmin from "../layouts/CardAdmin";
+import axios from "axios";
 
 export default function AdminPage() {
   const [ebooks, setEbooks] = useState([]);
@@ -15,6 +16,12 @@ export default function AdminPage() {
     fetchEbook();
   }, []);
 
+  // const handleAddEbook = async (e) => {
+  //   e.preventDefault()
+  //   await axios.post('/admin-edit', input)
+  //   navigate('/admin')
+  // }
+
   return (
     <>
       <div className="bg-white w-full p-4">
@@ -23,9 +30,13 @@ export default function AdminPage() {
       <div className="m-auto w-[70%] mt-10">
         <div className="flex gap-5 my-4">
           <div className="text-xl">Ebook list</div>
-          <Link to="/adminedit" className="bg-[#FEC601] text-white font-bold px-4 rounded-md">
+          <button
+            to="/admin-add"
+            className="bg-[#FEC601] text-white font-bold px-4 rounded-md"
+            // onClick={handleAddEbook}
+          >
             เพิ่ม
-          </Link>
+          </button>
         </div>
         <hr className="border-2" />
         <div className="w-[95%] m-auto">
@@ -43,7 +54,7 @@ export default function AdminPage() {
             </div>
           </div>
           <hr />
-          {/* <CardAdmin /> */}
+          <CardAdmin />
         </div>
       </div>
     </>
