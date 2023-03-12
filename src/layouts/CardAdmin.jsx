@@ -1,17 +1,13 @@
 import { Link, useParams } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import * as ebookApi from "../apis/ebook-api";
-import { useState } from "react";
 
-export default function CardAdmin() {
-  const [ebookList, setEbookList] = useState([]);
-  // console.log(ebooks);
-
-  const ebooks = () => {
-    getAllEbook().then((res) => {
-      setEbookList(res.data);
-    });
-  };
+export default function CardAdmin({ ebooks }) {
+  // const ebooks = () => {
+  //   getAllEbook().then((res) => {
+  //     setEbookList(res.data);
+  //   });
+  // };
 
   const handleEdit = (id) => {
     // Implement logic for editing an ebook
@@ -26,17 +22,19 @@ export default function CardAdmin() {
 
   return (
     <>
-      {ebookList.map((el) => (
-        <div className="flex gap-5 p-4" key={el.id}>
-          <img
-            src={el.image}
-            className="w-[205px] h-[300px] m-auto shadow-md mt-2"
-            alt={el.title}
-          />
-          <div className="flex flex-col justify-around">
+      {ebooks.map((el) => (
+        <div className="flex gap-5 p-4 border-b-2 border-white" key={el.id}>
+          <div>
+            <img
+              src={el.image}
+              className="w-[100px] h-[150px] m-auto shadow-md mt-2"
+              alt={el.title}
+            />
+          </div>
+          <div className="flex flex-col justify-around w-[90%]">
             <div className="flex flex-col gap-2">
               <div className="text-2xl">{el.title}</div>
-              <div className="text-sm">{el.author}</div>
+              <div className="text-sm text-white">{`โดย ${el.author}`}</div>
             </div>
             <div className="flex gap-4">
               <button
@@ -58,23 +56,3 @@ export default function CardAdmin() {
     </>
   );
 }
-
-/* <div className="flex gap-5 p-4">
-            <img
-              src={el.image}
-              className="w-[205px] h-[300px] m-auto shadow-md mt-2"
-              key={el.id}
-              alt={el.title}
-            />
-            <div className="flex flex-col justify-around">
-              <div className="flex flex-col gap-2">
-                <div className="text-2xl">{el.title}</div>
-                <div className="text-sm">{el.author}</div>
-              </div>
-              <div className="flex gap-4">
-                <button className="bg-[#FEC601] text-white font-bold px-4 rounded-md">แก้ไข</button>
-                <button className="bg-[#FEC601] text-white font-bold px-4 rounded-md">ลบ</button>
-              </div>
-            </div>
-          </div>
-          <hr /> */
