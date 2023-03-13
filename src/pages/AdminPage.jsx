@@ -16,31 +16,23 @@ export default function AdminPage() {
     fetchEbook();
   }, []);
 
-  // const handleAddEbook = async (e) => {
-  //   e.preventDefault()
-  //   await axios.post('/admin-edit', input)
-  //   navigate('/admin')
-  // }
-
   return (
     <>
       <div className="bg-white w-full p-4 fixed top-0">
         <div className="font-bold text-xl">Admin page</div>
       </div>
       <div className="flex justify-center">
-        <div className="m-auto w-[70%] mt-20">
-          <div className="flex gap-5 my-4">
-            <div className="text-xl">Ebook list</div>
-            <button
-              to="/admin-add"
-              className="bg-[#FEC601] text-white font-bold px-4 rounded-md"
-              // onClick={handleAddEbook}
-            >
-              เพิ่ม
-            </button>
+        <div className="m-auto w-[70%] mt-[60px]">
+          <div className="fixed w-[70%] bg-[#1F1D2B]">
+            <div className="flex gap-5 my-4">
+              <div className="text-xl">Ebook list</div>
+              <Link to="/admin-add" className="bg-[#FEC601] text-white font-bold px-4 rounded-md">
+                เพิ่ม
+              </Link>
+            </div>
+            <hr className="border-2" />
           </div>
-          <hr className="border-2" />
-          <div className="w-[100%]">
+          <div className="w-[100%] mt-[60px]">
             <CardAdmin ebooks={ebooks} />
           </div>
         </div>

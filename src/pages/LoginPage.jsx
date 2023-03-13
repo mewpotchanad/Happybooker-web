@@ -17,7 +17,7 @@ export default function LoginPage() {
             </div>
             <RegisterContainer />
             <div className="flex justify-center pb-2">
-              <Link to="/admin-login">Admin?</Link>
+              <Link to="/admin-login">Admin</Link>
             </div>
           </div>
         </div>
