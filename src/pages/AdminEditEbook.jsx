@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import * as adminService from "../apis/admin-api";
 
 export default function AdminEditEbook() {
@@ -11,12 +11,19 @@ export default function AdminEditEbook() {
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
   const navigate = useNavigate();
+  const { ebookId } = useParams();
 
   const handleSubmitForm = async (e) => {
     e.preventDefault();
-    await adminService.editEbook({ title, image, publisher, author, category, description });
+    await adminService.editEbook(ebookId, {
+      title,
+      image,
+      publisher,
+      author,
+      category,
+      description
+    });
     navigate("/admin");
-    window.location.reload();
   };
 
   return (

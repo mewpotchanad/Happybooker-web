@@ -33,7 +33,7 @@ export default function AdminPage() {
             <hr className="border-2" />
           </div>
           <div className="w-[100%] mt-[60px]">
-            <CardAdmin ebooks={ebooks} />
+            <CardAdmin ebooks={ebooks} setEbooks={setEbooks} />
           </div>
         </div>
       </div>
