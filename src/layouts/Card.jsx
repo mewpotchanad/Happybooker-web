@@ -1,11 +1,7 @@
-import { Link, useParams } from "react-router-dom";
-import useAuth from "../hooks/useAuth";
+import { Link } from "react-router-dom";
 import * as ebookApi from "../apis/ebook-api";
 
 export default function Card({ ebooks }) {
-  const { ebookId } = useParams();
-  const { authenticatedUser } = useAuth();
-
   return (
     <>
       {ebooks.map((el) => (

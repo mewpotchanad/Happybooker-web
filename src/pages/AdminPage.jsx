@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import * as ebookApi from "../apis/ebook-api";
 import CardAdmin from "../layouts/CardAdmin";
-import axios from "axios";
 
 export default function AdminPage() {
   const [ebooks, setEbooks] = useState([]);

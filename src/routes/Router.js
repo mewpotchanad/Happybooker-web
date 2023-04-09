@@ -16,7 +16,6 @@ import ProtectedRoute from "../features/auth/ProtectedRoute";
 import EditProfilePage from "../pages/EditProfilePage";
 import AdminPage from "../pages/AdminPage";
 import AdminEditEbook from "../pages/AdminEditEbook";
-import AdminLogin from "../pages/AdminLogin";
 import AdminAddEbook from "../pages/AdminAddEbook";
 import ProtectedRouteAdmin from "../features/auth/ProtectedRouteAdmin";
 

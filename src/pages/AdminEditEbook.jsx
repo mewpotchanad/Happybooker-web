@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import * as adminService from "../apis/admin-api";

@@ -1,5 +1,4 @@
-import { Link, useParams } from "react-router-dom";
-import useAuth from "../hooks/useAuth";
+import { Link } from "react-router-dom";
 import * as adminService from "../apis/admin-api";
 
 export default function CardAdmin({ ebooks, setEbooks }) {

@@ -1,25 +1,4 @@
-// import React from "react";
-// import LoginForm from "../features/auth/LoginForm";
-
-// export default function AdminLogin() {
-//   return (
-//     <section>
-//       <div className="font-bold text-2xl text-center bg-white p-4">Admin login</div>
-//       <div className="w-[100vw] my-10 flex justify-center">
-//         <div className="flex flex-col items-center justify-center">
-//           <div className="w-96 border-2 rounded-lg ">
-//             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-//               <LoginForm />
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
@@ -34,14 +13,16 @@ const AdminLogin = () => {
   const handleLogin = async (event) => {
     try {
       event.preventDefault();
-      await login(userName, password);
+      const res = await login(userName, password); // กำหนดค่า res จากการเรียกใช้ฟังก์ชัน login
       const user = res.data.user;
-      console.log(user);
       if (user.role !== "admin") {
         setError("Access denied: You do not have admin privileges.");
       } else {
-        // localStorage.setItem("token", token);
-        setAccessToken();
+        const setAccessToken = (token) => {
+          localStorage.setItem("token", token);
+        };
+        setAccessToken(res.data.token);
+
         navigate("/admin");
       }
     } catch (error) {

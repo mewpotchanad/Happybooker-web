@@ -5,12 +5,11 @@ import Menu from "../layouts/Menu";
 import ShelfCard from "../layouts/ShelfCard";
 import { useState, useEffect } from "react";
 import * as ebookApi from "../apis/ebook-api";
-import useAuth from "../hooks/useAuth";
+// import useAuth from "../hooks/useAuth";
 
 export default function ShelfPage() {
   const [ebooks, setEbooks] = useState([]);
-  const { authenticatedUser } = useAuth();
-  console.log(ebooks);
+  // const { authenticatedUser } = useAuth();
 
   useEffect(() => {
     const fetchEbook = async () => {
